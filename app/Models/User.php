@@ -21,6 +21,11 @@ class User extends Authenticatable implements FilamentUser
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    static array $allowed = [
+        'pitsilos@gmail.com',
+        'petros@diveris.org',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -63,6 +68,11 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         // return str_ends_with($this->email, '@diveris.org') && $this->hasVerifiedEmail();
+        return in_array(
+            self::allowed,
+            $this->email
+        ) && $this->hasVerifiedEmail();
+
         return true;
     }
 }
