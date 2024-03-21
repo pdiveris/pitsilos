@@ -43,7 +43,16 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-
+        'sftp' => [
+            'driver'    => 'sftp',
+            'host'      => 'u203732.your-storagebox.de',
+            'port'      => 22,
+            'username'  => env('SFTP_UID'),
+            'password'  => env('SFTP_PASS'),
+            /*            'privateKey' => 'path/to/or/contents/of/privatekey',*/
+            'root'      => '/pitsilos',
+            'timeout'   => 10,
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

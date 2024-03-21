@@ -31,7 +31,6 @@ class GalleryResource extends Resource
                     ->columnSpanFull(),
                 FileUpload::make('image')
                     ->columnSpanFull()
-                    ->imageEditor()
                     ->imageEditorAspectRatios([
                         '16:9',
                         '4:3',
