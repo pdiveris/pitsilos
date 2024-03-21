@@ -6,15 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::table('galleries', function (Blueprint $table) {
-            $table->string('image')
-                ->after('name')
-                ->nullable();
+        Schema::table('media', function (Blueprint $table) {
+            $table->tinyInteger('enabled')
+                ->after('type')
+                ->nullable()
+                ->default(1);
         });
     }
 
@@ -24,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('galleries', function (Blueprint $table) {
-            $table->dropColumn('image');
+            $table->dropColumn('enabled');
         });
     }
 };
