@@ -2,22 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GalleryResource\Pages;
-use App\Models\Gallery;
+use App\Filament\Resources\TypeResource\Pages;
+use App\Models\Type;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
-class GalleryResource extends Resource
+class TypeResource extends Resource
 {
-    protected static ?string $model = Gallery::class;
+    protected static ?string $model = Type::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
-    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
     {
@@ -29,15 +26,6 @@ class GalleryResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->maxLength(65535)
                     ->columnSpanFull(),
-                FileUpload::make('image')
-                    ->columnSpanFull()
-                    ->imageEditor()
-                    ->imageEditorAspectRatios([
-                        '16:9',
-                        '4:3',
-                        '1:1',
-                    ])
-                    ->preserveFilenames(),
                 Forms\Components\Toggle::make('enabled')
                     ->default(1)
                     ->required(),
@@ -90,9 +78,9 @@ class GalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGalleries::route('/'),
-            'create' => Pages\CreateGallery::route('/create'),
-            'edit' => Pages\EditGallery::route('/{record}/edit'),
+            'index' => Pages\ListTypes::route('/'),
+            'create' => Pages\CreateType::route('/create'),
+            'edit' => Pages\EditType::route('/{record}/edit'),
         ];
     }
 }

@@ -3,15 +3,16 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\MediaResource\Pages;
-use App\Filament\Resources\MediaResource\RelationManagers;
+use App\Models\Gallery;
 use App\Models\Media;
+use App\Models\Type;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class MediaResource extends Resource
 {
@@ -23,7 +24,27 @@ class MediaResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('description')
+                    ->maxLength(65535)
+                    ->columnSpanFull(),
+                Select::make('type')
+                    ->label('Type')
+                    ->options(Type::where(['enabled' => 1])->pluck('name', 'id'))
+                    ->required(),
+                Select::make('gallery_id')
+                    ->label('Gallery')
+                    ->options(Gallery::where(['enabled' => 1])->pluck('name', 'id'))
+                    ->required()
+                    ->searchable(),
+                FileUpload::make('image')
+                    ->columnSpanFull()
+                    ->preserveFilenames(),
+                Forms\Components\Toggle::make('enabled')
+                    ->default(1)
+                    ->required(),
             ]);
     }
 
@@ -31,7 +52,27 @@ class MediaResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('title')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('type')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\IconColumn::make('enabled')
+                    ->alignCenter()
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('deleted_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
