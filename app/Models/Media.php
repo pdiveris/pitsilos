@@ -15,6 +15,8 @@ class Media extends Model
     protected $fillable = [
         'title',
         'description',
+        'type',
+        'gallery_id',
         'image',
         'enabled',
     ];

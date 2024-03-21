@@ -13,6 +13,9 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\DB;
+
 
 class MediaResource extends Resource
 {
@@ -41,6 +44,12 @@ class MediaResource extends Resource
                     ->searchable(),
                 FileUpload::make('image')
                     ->columnSpanFull()
+                    ->imageEditor()
+                    ->imageEditorAspectRatios([
+                        '16:9',
+                        '4:3',
+                        '1:1',
+                    ])
                     ->preserveFilenames(),
                 Forms\Components\Toggle::make('enabled')
                     ->default(1)
@@ -55,9 +64,18 @@ class MediaResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\TextColumn::make('gallery_id')
+                    ->label('Gallery')
+                    ->getStateUsing(function (Builder $query, $record): string {
+                        return Gallery::find($record->gallery_id)->name ?? '';
+                    })
+                    ->label('Type'),
                 Tables\Columns\TextColumn::make('type')
-                    ->sortable()
-                    ->searchable(),
+                    ->label('Type')
+                    ->getStateUsing(function (Builder $query, $record): string {
+                        return Type::find($record->type)->name ?? '';
+                    })
+                    ->label('Type'),
                 Tables\Columns\IconColumn::make('enabled')
                     ->alignCenter()
                     ->boolean(),
