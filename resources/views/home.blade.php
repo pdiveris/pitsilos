@@ -14,7 +14,6 @@
         <script>
             function themeSwitch() {
                 let root = document.getElementsByTagName( 'html' )[0];
-
                 root.setAttribute( 'class', 'theme-dark' );
             }
         </script>
@@ -23,10 +22,10 @@
         <section class="section" >
             <div class="container" >
                 <h1 class="title">
-                    Hello World
+                    Nikos Pitsilos
                 </h1>
                 <p class="subtitle">
-                    My first website with <strong>Bulma</strong>!
+                    Wilkommen
                 </p>
                 <p>
                     <button class="button is-primary" onclick="themeSwitch()">
@@ -45,22 +44,61 @@
                 <!-- After -->
                 <div class="grid">
                     <div class="cell">
-                        <article class="box">
-                            <p class="title">Hello World</p>
-                            <p class="subtitle">What is up?</p>
-                        </article>
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="/images/placeholders/41425416240_3fa796ccca_c.jpg"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                                    iaculis mauris.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="cell">
-                        <article class="box">
-                            <p class="title">Foo</p>
-                            <p class="subtitle">Bar</p>
-                        </article>
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="/images/placeholders/koko.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                                    iaculis mauris.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="cell">
-                        <article class="box">
-                            <p class="title">Foo</p>
-                            <p class="subtitle">Bar</p>
-                        </article>
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title">
+                                    “There are two hard things in computer science: cache invalidation, naming
+                                    things, and off-by-one errors.”
+                                </p>
+                                <p class="subtitle">Jeff Atwood</p>
+                            </div>
+                            <footer class="card-footer">
+                                <p class="card-footer-item">
+                                  <span>
+                                    View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                                  </span>
+                                </p>
+                                <p class="card-footer-item">
+                                    <span> Share on <a href="#">Facebook</a> </span>
+                                </p>
+                            </footer>
+                        </div>
                     </div>
                 </div>
             </div>
