@@ -1,0 +1,39 @@
+@import 'bulma/css/bulma.min.css';
+@use "bulma/sass/utilities/controls";
+@use "bulma/sass/themes";
+
+@use "bulma/sass/elements/button";
+@use "bulma/sass/components/message";
+
+.bulma-control-mixin {
+    @include controls.control;
+    background: deeppink;
+    color: white;
+}
+
+/*
+.bulma-control-mixin {
+&.is-small {
+     @include control-small;
+ }
+
+&.is-medium {
+     @include control-medium;
+ }
+
+&.is-large {
+     @include control-large;
+ }
+}
+*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Update CSS variables */
+    }
+}
+
+[data-theme=light],
+.theme-light {
+    /* Update CSS variables */
+}
