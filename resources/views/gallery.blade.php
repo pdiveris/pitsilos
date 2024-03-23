@@ -9,8 +9,12 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
-    <link rel="stylesheet" href="/css/lightgallery.css">
-    <link rel="stylesheet" href="/js/lightgallery.js">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
     @vite(['resources/css/gallery.css', 'resources/js/app.js'])
 
     <script>
@@ -47,18 +51,6 @@
         </p>
     </div>
 </section>
-<section>
-    <div id="pako">
-        <a href="/storage/23.jpg">
-            <img src="/storage/23.jpg" width="400px;">
-        </a>
-        <a href="/storage/23.jpg">
-            <img src="/storage/23.jpg" width="400px;">
-        </a>
-        ...
-    </div>
-</section>
-{{--
         <section class="section">
             <div id="lightgallery1">
                 <div class="container">
@@ -69,7 +61,11 @@
                                     <div class="card">
                                         <div class="card-image">
                                             <figure class="image is-4by3">
-                                                <img src="{{url("storage/$tile->image")}}">
+                                                <img
+                                                    src="{{url("storage/$tile->image")}}"
+                                                    data-fancybox="gallery"
+                                                    data-caption="{{ $tile->title }}"
+                                                >
                                             </figure>
                                         </div>
                                     </div>
@@ -80,10 +76,10 @@
                 </div>
             </div>
         </section>
---}}
 </body>
 <script>
-    alert('asas');
-    lightGallery(document.getElementById('pako'));
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
 </script>
 </html>
