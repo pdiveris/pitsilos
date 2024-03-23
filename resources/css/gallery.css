@@ -1,9 +1,13 @@
 @import 'bulma/css/bulma.min.css';
+/*
+@import 'lightgallery.js/dist/css/lightgallery.css';
+*/
 @use "bulma/sass/utilities/controls";
 @use "bulma/sass/themes";
 
 @use "bulma/sass/elements/button";
 @use "bulma/sass/components/message";
+
 
 .bulma-control-mixin {
     @include controls.control;

@@ -30,3 +30,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+/*
+import lightGallery from 'lightgallery.js';
+import lgThumbnail from 'lg-thumbnail';
+import lgFullScreen from 'lg-fullscreen';
+
+window.lightGallery = lightGallery;
+window.lgThumbnail = lgThumbnail;
+window.lgFullScreen = lgFullScreen;
+*/
