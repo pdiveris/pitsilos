@@ -48,13 +48,13 @@
         <section class="section">
             <div class="container">
                 <div class="grid">
-                    @foreach($galleries as $gallery)
+                @foreach($galleries as $gallery)
                     <div class="cell">
-                        <a href="{{ url('gallery', [Str::lower($gallery->name)])  }}">
+                        <a href="{{ url('gallery', [Str::lower($gallery->name)]) }}">
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
-                                        <img src="{{url("storage/$gallery->image")}}">
+                                        <img src="{{url("storage/$gallery->image") }}">
                                     </figure>
                                 </div>
                                 <div class="card-content">
@@ -65,7 +65,7 @@
                             </div>
                         </a>
                     </div>
-                    @endforeach
+                @endforeach
                 </div>
             </div>
         </section>

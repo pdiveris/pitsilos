@@ -50,7 +50,7 @@
                 <div class="grid">
                     @foreach($media as $tile)
                     <div class="cell">
-                        <a href="#">
+                        <a href="{{ url('slide', [Str::lower($title->title)]) }}">
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
