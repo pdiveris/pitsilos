@@ -48,19 +48,14 @@
         <section class="section">
             <div class="container">
                 <div class="grid">
-                    @foreach($galleries as $gallery)
+                    @foreach($media as $tile)
                     <div class="cell">
-                        <a href="{{ url('gallery', [Str::lower($gallery->name)])  }}">
+                        <a href="#">
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
-                                        <img src="{{url("storage/$gallery->image")}}">
+                                        <img src="{{url("storage/$tile->image")}}">
                                     </figure>
-                                </div>
-                                <div class="card-content">
-                                    <div class="content">
-                                        <h1>{{ $gallery->name }}</h1>
-                                    </div>
                                 </div>
                             </div>
                         </a>

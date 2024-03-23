@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
-use Illuminate\Http\Request;
+use App\Models\Media;
 use Illuminate\View\View;
 
 class GalleryController extends Controller
 {
     public function show(Gallery $gallery): View
     {
-        dd($gallery);
+        $media = Media::where('gallery_id', '=', $gallery->id)
+            ->where('enabled', '=', 1)
+            ->get();
+
+        return view(
+            'gallery',
+            [
+                'media' => $media
+            ]
+        );
     }
 }
