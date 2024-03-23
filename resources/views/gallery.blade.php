@@ -29,53 +29,53 @@
     </script>
 </head>
 <body>
-<section class="section" >
-    <div class="container" >
-        <h1 class="title">
-            Nikos Pitsilos
-        </h1>
-        <p class="subtitle">
-            Wilkommen
-        </p>
-        <p>
-            <button class="button is-primary" onclick="themeSwitch()">
-                Switch Mode
-            </button>
-            {{--
-                                <button class="button is-link">Button</button>
-                                <button class="button is-info">Button</button>
-                                <button class="button is-success">Button</button>
-                                <button class="button is-warning">Button</button>
-                                <button class="button is-danger">Button</button>
-            --}}
-        </p>
-    </div>
-</section>
-        <section class="section">
-            <div id="lightgallery1">
-                <div class="container">
-                    <div class="grid">
-                            @foreach($media as $tile)
-                            <div class="cell">
-                                <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
-                                    <div class="card">
-                                        <div class="card-image">
-                                            <figure class="image is-4by3">
-                                                <img
-                                                    src="{{url("storage/$tile->image")}}"
-                                                    data-fancybox="gallery"
-                                                    data-caption="{{ $tile->title }}"
-                                                >
-                                            </figure>
-                                        </div>
+    <section class="section" >
+        <div class="container" >
+            <h1 class="title">
+                Nikos Pitsilos
+            </h1>
+            <p class="subtitle">
+                Wilkommen
+            </p>
+            <p>
+                <button class="button is-primary" onclick="themeSwitch()">
+                    Switch Mode
+                </button>
+                {{--
+                                    <button class="button is-link">Button</button>
+                                    <button class="button is-info">Button</button>
+                                    <button class="button is-success">Button</button>
+                                    <button class="button is-warning">Button</button>
+                                    <button class="button is-danger">Button</button>
+                --}}
+            </p>
+        </div>
+    </section>
+    <section class="section">
+        <div id="lightgallery1">
+            <div class="container">
+                <div class="grid">
+                        @foreach($media as $tile)
+                        <div class="cell">
+                            <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img
+                                                src="{{url("storage/$tile->image")}}"
+                                                data-fancybox="gallery"
+                                                data-caption="{{ $tile->title }}"
+                                            >
+                                        </figure>
                                     </div>
-                                </a>
-                            </div>
-                            @endforeach
+                                </div>
+                            </a>
                         </div>
-                </div>
+                        @endforeach
+                    </div>
             </div>
-        </section>
+        </div>
+    </section>
 </body>
 <script>
     Fancybox.bind("[data-fancybox]", {
