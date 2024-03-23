@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view(
+        'home',
+        [
+            'galleries' => Gallery::where('enabled', '=', true)->get(),
+        ]
+    );
 });
+
+Route::get('/gallery/{gallery}', [GalleryController::class, 'show']);
 
 Route::middleware([
     'auth:sanctum',

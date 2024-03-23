@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="theme-light">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="theme-dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +27,7 @@
                 <p class="subtitle">
                     Wilkommen
                 </p>
+{{--
                 <p>
                     <button class="button is-primary" onclick="themeSwitch()">
                         Switch Mode
@@ -37,69 +38,28 @@
                     <button class="button is-warning">Button</button>
                     <button class="button is-danger">Button</button>
                 </p>
+--}}
             </div>
         </section>
         <section class="section">
             <div class="container">
-                <!-- After -->
                 <div class="grid">
+                    @foreach($galleries as $gallery)
                     <div class="cell">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img
-                                        src="/images/placeholders/41425416240_3fa796ccca_c.jpg"
-                                        alt="Placeholder image"
-                                    />
+                                    <img src="{{url("storage/$gallery->image")}}">
                                 </figure>
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                                    iaculis mauris.
+                                    <h1>{{ $gallery->name }}</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="cell">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img
-                                        src="/images/placeholders/koko.png"
-                                        alt="Placeholder image"
-                                    />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                                    iaculis mauris.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cell">
-                        <div class="card">
-                            <div class="card-content">
-                                <p class="title">
-                                    “There are two hard things in computer science: cache invalidation, naming
-                                    things, and off-by-one errors.”
-                                </p>
-                                <p class="subtitle">Jeff Atwood</p>
-                            </div>
-                            <footer class="card-footer">
-                                <p class="card-footer-item">
-                                  <span>
-                                    View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-                                  </span>
-                                </p>
-                                <p class="card-footer-item">
-                                    <span> Share on <a href="#">Facebook</a> </span>
-                                </p>
-                            </footer>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
