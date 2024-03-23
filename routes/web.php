@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\MediaController;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/gallery/{gallery}', [GalleryController::class, 'show']);
+Route::get('/slide/{slide}', [MediaController::class, 'show']);
 
 Route::middleware([
     'auth:sanctum',
