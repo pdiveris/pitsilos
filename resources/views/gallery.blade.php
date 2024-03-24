@@ -16,6 +16,7 @@
                                             src="{{url("storage/$tile->image")}}"
                                             data-fancybox="gallery"
                                             data-caption="{{ $tile->title }}"
+                                            data-download-src="{{url("storage/$tile->image")}}"
                                         >
                                     </figure>
                                 </div>
@@ -28,7 +29,17 @@
     </section>
     <script>
         Fancybox.bind("[data-fancybox]", {
-            // Your custom options
+            Thumbs : {
+                showOnStart: false,
+            },
+            Toolbar: {
+                display: {
+                    left: ["infobar"],
+                    middle: [],
+                    right: ["toggleZoom", "slideshow", "fullscreen", "download", "thumbs", "close"],
+                },
+            },
         });
+
     </script>
 @endsection
