@@ -1,35 +1,20 @@
 @import 'bulma/css/bulma.min.css';
-/*
-@import 'lightgallery.js/dist/css/lightgallery.css';
-*/
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/regular.css';
+@import '@fortawesome/fontawesome-free/css/solid.css';
+@import '@fortawesome/fontawesome-free/css/brands.css';
+
 @use "bulma/sass/utilities/controls";
 @use "bulma/sass/themes";
 
 @use "bulma/sass/elements/button";
 @use "bulma/sass/components/message";
 
-
 .bulma-control-mixin {
     @include controls.control;
     background: deeppink;
     color: white;
 }
-
-/*
-.bulma-control-mixin {
-&.is-small {
-     @include control-small;
- }
-
-&.is-medium {
-     @include control-medium;
- }
-
-&.is-large {
-     @include control-large;
- }
-}
-*/
 
 @media (prefers-color-scheme: light) {
     :root {
@@ -40,4 +25,10 @@
 [data-theme=light],
 .theme-light {
     /* Update CSS variables */
+}
+
+.logo {
+    font-family: 'Bai Jamjuree', sans-serif;
+    margin-left: 0.7em;
+    margin-top: 0.3em;
 }
