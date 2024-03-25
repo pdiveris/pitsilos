@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Creagia\FilamentCodeField\CodeField;
 
 class PageResource extends Resource
 {
@@ -30,8 +31,12 @@ class PageResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('meta')
                     ->columnSpanFull(),
+                CodeField::make('options')
+                    ->jsonField()
+                    ->withLineNumbers(),
                 Forms\Components\DateTimePicker::make('published_at')
-                    ->default(now()),
+                    ->default(now())
+                    ->columnSpanFull(),
                 Forms\Components\Toggle::make('enabled')
                     ->default(1)
                     ->required(),

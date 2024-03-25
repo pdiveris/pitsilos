@@ -1,13 +1,11 @@
-@if($hasMenu ?? false)
+@if(\App\Models\Site::hasStartMenu())
 <div class="navbar-start">
-    <a class="navbar-item">
-        Home
+    @foreach(\App\Models\Site::getStartMenuItems() as $menuItem)
+    <a class="navbar-item" href="{{ url($menuItem->slug) }}">
+        {{ $menuItem->title }}
     </a>
-
-    <a class="navbar-item">
-        Documentation
-    </a>
-
+    @endforeach
+{{--
     <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
             More
@@ -29,5 +27,6 @@
             </a>
         </div>
     </div>
+--}}
 </div>
 @endif

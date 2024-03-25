@@ -19,6 +19,7 @@ class Page extends Model
         'slug',
         'content',
         'meta',
+        'options',
         'published_at',
         'enabled',
         'user_id',
