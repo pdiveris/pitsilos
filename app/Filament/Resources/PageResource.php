@@ -6,6 +6,7 @@ use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
 use App\Models\Page;
 use Filament\Forms;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -27,7 +28,7 @@ class PageResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('content')
+                MarkdownEditor::make('content')
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('meta')
                     ->columnSpanFull(),

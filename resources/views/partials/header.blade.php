@@ -18,6 +18,13 @@
 
         <div class="navbar-end">
             <div class="navbar-item">
+                @if(\App\Models\Site::hasEndMenu())
+                    @foreach(\App\Models\Site::getEndMenuItems() as $menuItem)
+                        <a class="navbar-item" href="{{ url($menuItem->slug) }}">
+                            {{ $menuItem->title }}
+                        </a>
+                    @endforeach
+                @endif
                 <div class="buttons">
                     <button id="js-cycle" class="bd-cycle js-burger" data-theme-toggle>
                         <div class="bd-cycles">

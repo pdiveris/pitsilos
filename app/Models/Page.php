@@ -44,6 +44,8 @@ class Page extends Model
      */
     public function resolveRouteBinding($value, $field = null)
     {
-        return $this->where('slug', $value)->firstOrFail();
+        return $this->where('slug', $value)
+            ->where('enabled', '=', true)
+            ->firstOrFail();
     }
 }

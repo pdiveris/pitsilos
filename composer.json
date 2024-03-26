@@ -19,6 +19,7 @@
         "livewire/volt": "^1.0",
         "meilisearch/meilisearch-php": "^1.5",
         "predis/predis": "^2.2",
+        "spatie/laravel-markdown": "^2.5",
         "spatie/laravel-sluggable": "^3.6"
     },
     "require-dev": {

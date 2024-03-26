@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MediaController;
 use App\Models\Gallery;
@@ -37,3 +38,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/{page?}', ContentController::class);
