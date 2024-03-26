@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a href="{{ url('/')  }}">
-            <h1 class="title logo">
+            <h1 class="title logo neso">
                 Nikos Pitsilos
             </h1>
         </a>

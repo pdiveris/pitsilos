@@ -36,3 +36,11 @@
 a, a:visited, a:hover, a:active {
     color: inherit !important;
 }
+
+.NesobriteExpBook {
+    font-family: NesobriteExpBook;
+}
+
+.neso {
+    font-family: NesobriteExpBook;
+}
