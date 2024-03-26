@@ -32,6 +32,20 @@ class Site
                 ->count() > 0;
     }
 
+    /**
+     * Enable / disable menu
+     *
+     * @return bool
+     */
+    public static function hasFooterMenu(): bool
+    {
+        return env('CMS_HAS_PAGES') &&
+            Page::where('enabled', '=', true)
+                ->where('published_at', '<=', now())
+                ->where('options->menu', 'footer')
+                ->count() > 0;
+    }
+
     public static function getStartMenuItems(): mixed
     {
         return Page::where('enabled', '=', true)
@@ -45,6 +59,14 @@ class Site
         return Page::where('enabled', '=', true)
             ->where('published_at', '<=', now())
             ->where('options->menu', 'end')
+            ->get();
+    }
+
+    public static function getFooterMenuItems(): mixed
+    {
+        return Page::where('enabled', '=', true)
+            ->where('published_at', '<=', now())
+            ->where('options->menu', 'footer')
             ->get();
     }
 }

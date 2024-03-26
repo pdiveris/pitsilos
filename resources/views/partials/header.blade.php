@@ -1,9 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a href="{{ url('/')  }}">
-            <h1 class="title logo neso">
-                Nikos Pitsilos
-            </h1>
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -15,7 +12,6 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         @include('partials.menu_start')
-
         <div class="navbar-end">
             <div class="navbar-item">
                 @if(\App\Models\Site::hasEndMenu())
@@ -45,6 +41,18 @@
         </div>
     </div>
 </nav>
+
+<div class="columns is-mobile is-centered">
+    <div class="column"></div>
+    <div class="column is-four-fifths-desktop has-text-centered logowrapper">
+        <a href="{{ url('/') }}">
+            <h1 class="title logo neso is-size-1">
+                Nikos Pitsilos
+            </h1>
+        </a>
+    </div>
+    <div class="column"></div>
+</div>
 
 <script>
     const button = document.querySelector("[data-theme-toggle]");

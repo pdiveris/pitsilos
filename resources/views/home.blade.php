@@ -5,6 +5,7 @@
 @section('content')
     <section class="section">
         <div class="container">
+
             <div class="grid">
             @foreach($galleries as $gallery)
                 <div class="cell">
@@ -16,8 +17,8 @@
                                 </figure>
                             </div>
                             <div class="card-content">
-                                <div class="content">
-                                    <h1>{{ $gallery->name }}</h1>
+                                <div class="content neso">
+                                    <h2>{{ $gallery->name }}</h2>
                                 </div>
                             </div>
                         </div>

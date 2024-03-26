@@ -27,12 +27,6 @@
     /* Update CSS variables */
 }
 
-.logo {
-    font-family: 'Bai Jamjuree', sans-serif;
-    margin-left: 0.7em;
-    margin-top: 0.3em;
-}
-
 a, a:visited, a:hover, a:active {
     color: inherit !important;
 }
@@ -44,3 +38,9 @@ a, a:visited, a:hover, a:active {
 .neso {
     font-family: NesobriteExpBook;
 }
+
+.logowrapper {
+    border-bottom: 1px solid white !important;
+}
+
+
