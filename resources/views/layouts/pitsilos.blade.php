@@ -15,10 +15,12 @@
         href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
     @vite(['resources/css/gallery.css', 'resources/js/app.js'])
-
 </head>
 <body>
 @include('partials.header')
+<section class="section hero is-fullheight">
 @yield('content')
+@include('partials.footer')
+</section>.
 </body>
 </html>
