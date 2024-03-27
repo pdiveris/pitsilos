@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view(
         'home',
         [
+            'locale' => session()->get('locale') ?? app()->getLocale(),
             'galleries' => Gallery::where('enabled', '=', true)->get(),
         ]
     );
@@ -39,5 +41,10 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
 
 Route::get('/{page?}', ContentController::class);

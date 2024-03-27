@@ -22,6 +22,18 @@
                     @endforeach
                 @endif
                 <div class="buttons">
+                    <a class="button is-small {{ $locale === 'en' ? 'is-active' : '' }}"
+                       id="locale_en"
+                       href="{{ url('language/en') }}
+                    ">
+                        EN
+                    </a>
+                    <a class="button is-small {{ $locale === 'el' ? 'is-active' : '' }}"
+                       id="locale_el"
+                       href="{{ url('language/el') }}"
+                    >
+                        EL
+                    </a>
                     <button id="js-cycle" class="bd-cycle js-burger" data-theme-toggle>
                         <div class="bd-cycles">
                             <div class="bd-cycle-sun" id="icon_sun">

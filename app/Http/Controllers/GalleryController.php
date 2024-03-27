@@ -10,6 +10,8 @@ class GalleryController extends Controller
 {
     public function show(Gallery $gallery): View
     {
+        $locale = session()->get('locale') ?? app()->getLocale();
+
         $media = Media::where('gallery_id', '=', $gallery->id)
             ->where('enabled', '=', 1)
             ->get();
@@ -17,6 +19,7 @@ class GalleryController extends Controller
         return view(
             'gallery',
             [
+                'locale' => $locale,
                 'media' => $media
             ]
         );
