@@ -6,9 +6,11 @@
     <title>{{env('APP_NAME')}}</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.bunny.net/css?family=bai-jamjuree:200" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=alef:400" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=abel:400|creepster:400" rel="stylesheet" />
     <link href="/css/fond.css" rel="stylesheet" />
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link

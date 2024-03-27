@@ -44,9 +44,9 @@
 
 <div class="columns is-mobile is-centered">
     <div class="column"></div>
-    <div class="column is-four-fifths-desktop has-text-centered logowrapper">
+    <div class="column is-four-fifths-desktop has-text-centered logowrapper has-text-dark">
         <a href="{{ url('/') }}">
-            <h1 class="title logo neso is-size-1">
+            <h1 class="title logo neso is-size-1-desktop is-size-4-mobile has-text-grey">
                 Nikos Pitsilos
             </h1>
         </a>

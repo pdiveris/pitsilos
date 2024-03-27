@@ -35,7 +35,7 @@ return [
      */
     'commonmark_options' => [
         'renderer' => [
-            'block_separator' => "\n",
+            'block_separator' => "\n<br />",
             'inner_separator' => "\n<br />",
             'soft_break'      => "\n",
         ],

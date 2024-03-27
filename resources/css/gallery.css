@@ -40,7 +40,16 @@ a, a:visited, a:hover, a:active {
 }
 
 .logowrapper {
-    border-bottom: 1px solid white !important;
+    border-bottom: 1px solid grey !important;
 }
 
+.footer {
+    background-color: inherit !important;
+}
 
+.alef {
+    font-family: "Alef";
+}
+.verdana {
+    font-family: "Verdana";
+}
