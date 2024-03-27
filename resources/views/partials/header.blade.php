@@ -2,7 +2,12 @@
     <div class="navbar-brand">
         <a href="{{ url('/')  }}">
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button"
+           class="navbar-burger"
+           aria-label="menu"
+           aria-expanded="false"
+           data-target="navbarBasicExample"
+        >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -33,6 +38,12 @@
                        href="{{ url('language/el') }}"
                     >
                         EL
+                    </a>
+                    <a class="button is-small {{ $locale === 'sv' ? 'is-active' : '' }}"
+                       id="locale_el"
+                       href="{{ url('language/sv') }}"
+                    >
+                        SV
                     </a>
                     <button id="js-cycle" class="bd-cycle js-burger" data-theme-toggle>
                         <div class="bd-cycles">

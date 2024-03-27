@@ -40,20 +40,31 @@ class Page extends Model
     public function getPageTranslationsAttribute(): array
     {
         $ret = [];
-        foreach ($this->translations->all() as $id => $translation) {
+        foreach ($this->translations as $i => $translation) {
             $ret[$translation->lang_id] = [
-                'title' => $translation->name,
-                'content' => $translation->description,
+                "title" => $translation->title,
+                "content" => $translation->content
             ];
         }
+
         return $ret;
     }
 
-    public function translate($langId)
+    /**
+     * @param string $langCode e.g. en, el, de etc
+     * @return mixed
+     */
+    public function translate(string $langCode)
     {
-        return $this->translations
-            ->where('lang_id', $langId)
-            ->first();
+        $lang = Language::where('code', '=', $langCode)
+                            ->first();
+
+        if ($lang) {
+            return $this->translations
+                ->where('lang_id', $lang->id)
+                ->first();
+        }
+        return null;
     }
 
     /**
