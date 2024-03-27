@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
-use App\Filament\Resources\PageResource\RelationManagers;
+use App\Filament\Resources\PageResource\RelationManagers\PageTranslationsRelationManager;
 use App\Models\Page;
 use Filament\Forms;
 use Filament\Forms\Components\MarkdownEditor;
@@ -93,7 +93,7 @@ class PageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PageTranslationsRelationManager::class
         ];
     }
 

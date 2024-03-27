@@ -14,14 +14,8 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name')
-                ->default(env('APP_NAME'));
-
-            $table->string('environment')
-                ->default('live');
-
-            $table->json('settings')
-                ->nullable();
+            $table->string('name');
+            $table->string('value');
 
             $table->timestamps();
         });

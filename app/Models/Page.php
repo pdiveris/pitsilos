@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -25,10 +26,40 @@ class Page extends Model
         'user_id',
     ];
 
+    protected $appends = [
+        'page_translations',
+    ];
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(
+            PageTranslation::class
+        );
+    }
+
+    public function getPageTranslationsAttribute(): array
+    {
+        $ret = [];
+        foreach ($this->translations->all() as $id => $translation) {
+            $ret[$translation->lang_id] = [
+                'title' => $translation->name,
+                'content' => $translation->description,
+            ];
+        }
+        return $ret;
+    }
+
+    public function translate($langId)
+    {
+        return $this->translations
+            ->where('lang_id', $langId)
+            ->first();
+    }
+
     /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions() : SlugOptions
+    public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('title')
