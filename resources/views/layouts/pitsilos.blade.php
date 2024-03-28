@@ -25,6 +25,7 @@
 <section class="section hero is-fullheight">
 @yield('content')
 @include('partials.footer')
-</section>.
+</section>
+@include('partials.analytics')
 </body>
 </html>

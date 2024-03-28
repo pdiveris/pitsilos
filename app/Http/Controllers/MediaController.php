@@ -9,13 +9,11 @@ class MediaController extends Controller
 {
     public function show(Media $slide): View
     {
-        $locale = session()->get('locale') ?? app()->getLocale();
-
         return view(
             'slide',
             [
-                'locale' => $locale,
-                'slide' => $slide
+                'locale' => $this->getLocale(),
+                'slide' => $slide,
             ]
         );
     }

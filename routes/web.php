@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediaController;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
@@ -17,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
 
+
+
+Route::get('/sadasdas', function () {
     return view(
         'home',
         [
@@ -28,6 +31,7 @@ Route::get('/', function () {
     );
 });
 
+Route::get('/', HomeController::class);
 Route::get('/gallery/{gallery}', [GalleryController::class, 'show']);
 Route::get('/slide/{slide}', [MediaController::class, 'show']);
 
