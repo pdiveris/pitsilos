@@ -17,7 +17,7 @@
                                 </figure>
                             </div>
                             <div class="card-content">
-                                <div class="content neso has-text-grey is-size-5-mobile">
+                                <div class="content sofia_fat has-text-grey is-size-5-mobile">
                                     <h2 class="is-size-5-mobile has-text-grey">{{ $gallery->name }}</h2>
                                 </div>
                             </div>

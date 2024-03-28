@@ -39,12 +39,6 @@
                     >
                         EL
                     </a>
-                    <a class="button is-small {{ $locale === 'sv' ? 'is-active' : '' }}"
-                       id="locale_el"
-                       href="{{ url('language/sv') }}"
-                    >
-                        SV
-                    </a>
                     <button id="js-cycle" class="bd-cycle js-burger" data-theme-toggle>
                         <div class="bd-cycles">
                             <div class="bd-cycle-sun" id="icon_sun">
@@ -64,7 +58,6 @@
         </div>
     </div>
 </nav>
-
 <div class="columns is-mobile is-centered">
     <div class="column"></div>
     <div class="column is-four-fifths-desktop has-text-centered logowrapper has-text-dark">

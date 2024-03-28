@@ -3,8 +3,8 @@
         <p>
             @if(\App\Models\Site::hasFooterMenu())
                 @foreach(\App\Models\Site::getFooterMenuItems() as $menuItem)
-                    <a class="is-size-7-mobile neso" href="{{ url($menuItem->slug) }}">
-                        {{ $menuItem->title }}
+                    <a class="is-size-7-mobile sofia" href="{{ url($menuItem->slug) }}">
+                        {{ $menuItem->translate($locale)->title ?? $menuItem->title }}
                     </a> |
                 @endforeach
             @endif

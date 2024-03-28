@@ -6,9 +6,10 @@
     <title>{{env('APP_NAME')}}</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=alef:400" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=abel:400|creepster:400" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=advent-pro:500,600|carlito:400,700|sofia-sans-semi-condensed:400,700,800"
+          rel="stylesheet" />
+
     <link href="/css/fond.css" rel="stylesheet" />
 
     <!-- Scripts -->

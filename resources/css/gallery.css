@@ -47,9 +47,35 @@ a, a:visited, a:hover, a:active {
     background-color: inherit !important;
 }
 
-.alef {
-    font-family: "Alef";
+.advent {
+    font-family: 'Advent Pro', sans-serif;
 }
+
+.advent_fat {
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 600;
+}
+
+.carlito {
+    font-weight: 400;
+    font-family: 'Carlito', sans-serif;
+}
+
+.carlito_fat {
+    font-family: 'Carlito', sans-serif;
+    font-weight: 700;
+}
+
+.sofia {
+    font-weight: 400;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+}
+
+.sofia_fat {
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    font-weight: 700;
+}
+
 .verdana {
     font-family: "Verdana";
 }
