@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use function Laravel\Prompts\select;
+use Rennokki\QueryCache\Traits\QueryCacheable;
 
 class Setting extends Model
 {
@@ -16,10 +16,4 @@ class Setting extends Model
         'type',
         'value',
     ];
-
-    public static function get(string $name): string
-    {
-        $setting = Setting::where("name", "=", $name)->first();
-        return $setting ? $setting->value : '';
-    }
 }
