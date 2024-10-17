@@ -10,8 +10,9 @@
                         <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
                             <div class="card">
                                 <div class="card-image">
-                                    <figure class="image is-4by3">
+                                    <figure style="text-align: center">
                                         <img
+                                            style="max-width: 259px; max-height: 172px;"
                                             src="{{url("storage/$tile->image")}}"
                                             data-fancybox="gallery"
                                             data-caption="{{ $tile->title }}"

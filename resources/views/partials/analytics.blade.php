@@ -1,1 +1,1 @@
-{!! \App\Models\SettingView::get('matomo_analytics') ?? '' !!}
+{!! \App\Models\SettingCached::get('matomo_analytics') ?? '' !!}

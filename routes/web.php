@@ -18,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
 Route::get('/sadasdas', function () {
     return view(
         'home',

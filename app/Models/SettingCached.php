@@ -26,7 +26,7 @@ class SettingCached extends Model
      *
      * @var int|\DateTime
      */
-    public int|\DateTime $cacheFor = 3600;
+    public int|\DateTime $cacheFor = 0;
 
     /**
      * The tags for the query cache. Can be useful
@@ -34,7 +34,7 @@ class SettingCached extends Model
      *
      * @var null|array
      */
-    public $cacheTags = ['settings'];
+    public ?array $cacheTags = ['settings'];
 
     /**
      * A cache prefix string that will be prefixed
@@ -42,14 +42,21 @@ class SettingCached extends Model
      *
      * @var string
      */
-    public $cachePrefix = 'settings_';
+    public string $cachePrefix = 'settings_';
 
     /**
      * The cache driver to be used.
      *
      * @var string
      */
-    public $cacheDriver = 'redis';
+    public string $cacheDriver = 'redis';
+
+    protected function getCacheBaseTags(): array
+    {
+        return [
+            'custom_setting_tag',
+        ];
+    }
 
     public static function get(string $name): string
     {
