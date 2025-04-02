@@ -3,7 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{env('APP_NAME')}}</title>
+    @isset($section)
+        <title>{{env('APP_NAME')}} :: {{ $section}}</title>
+    @endisset
+    @empty($section)
+        <title>{{env('APP_NAME')}}</title>
+    @endempty
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="preconnect" href="https://fonts.bunny.net">

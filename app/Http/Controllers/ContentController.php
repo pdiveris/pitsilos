@@ -17,6 +17,7 @@ class ContentController extends Controller
             [
                 'locale' => $this->getLocale(),
                 'page' => $page,
+                'section' => $page->title,
             ]
         );
     }

@@ -3,29 +3,35 @@
 @extends('layouts.pitsilos')
 
 @section('content')
-        <div class="container">
-            <div class="grid" id="slides">
-                @foreach($media as $tile)
-                    <div class="cell">
-                        <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
-                            <div class="cardsaa">
-                                <div class="card-image">
-                                    <figure style="text-align: center">
-                                        <img
-                                            style="max-height: 172px;"
-                                            src="{{url("storage/$tile->image")}}"
-                                            data-fancybox="gallery"
-                                            data-caption="{{ $tile->title }}"
-                                            data-download-src="{{url("storage/$tile->image")}}"
-                                        >
-                                    </figure>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+    <style>
+        .grid-item { width: 200px; }
+        .grid-item--width2 { width: 400px; }
+    </style>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <div class="container">
+        <div class="grid" id="slides1">
+            @foreach($media as $tile)
+                <div class="grid-item">
+                    <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
+                        {{--<div class="cardsaa">--}}
+                            {{--<div class="card-image">--}}
+                                <figure style="text-align: center">
+                                    <img
+                                        style="max-height: 172px;"
+                                        src="{{url("storage/$tile->image")}}"
+                                        data-fancybox="gallery"
+                                        data-caption="{{ $tile->title }}"
+                                        data-download-src="{{url("storage/$tile->image")}}"
+                                    >
+                                </figure>
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    </a>
+                </div>
+            @endforeach
         </div>
+    </div>
     <script>
         Fancybox.bind("[data-fancybox]", {
             Thumbs : {
@@ -53,5 +59,12 @@
                 },
             },
         });
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+
     </script>
 @endsection
