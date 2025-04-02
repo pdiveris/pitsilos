@@ -29,8 +29,7 @@
                 <div class="buttons">
                     <a class="button is-small {{ $locale === 'en' ? 'is-active' : '' }}"
                        id="locale_en"
-                       href="{{ url('language/en') }}
-                    ">
+                       href="{{ url('language/en') }}">
                         EN
                     </a>
                     <a class="button is-small {{ $locale === 'el' ? 'is-active' : '' }}"

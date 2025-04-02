@@ -22,4 +22,19 @@ class GalleryController extends Controller
             ]
         );
     }
+
+    public function test(Gallery $gallery): View
+    {
+        $media = Media::where('gallery_id', '=', 5)
+            ->where('enabled', '=', 1)
+            ->get();
+
+        return view(
+            'test',
+            [
+                'locale' => $this->getLocale(),
+                'media' => $media,
+            ]
+        );
+    }
 }

@@ -23,4 +23,7 @@
             <div class="column is-one-fifth"></div>
         </div>
     </section>
+    <script>
+        setTimeout("location.href = 'https://pitsilosphotography.com';",1500);
+    </script>
 @endsection

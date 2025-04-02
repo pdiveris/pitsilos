@@ -13,8 +13,8 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         $ip = $request->ip();
-        $ip = '139.91.191.3';
         $records = IP2LocationLaravel::get($ip, 'bin');
+
         if ($records['countryCode'] !== 'GR') {
             return view(
                 'home',

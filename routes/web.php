@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', TestController::class);
 
 Route::get('/', HomeController::class);
+Route::get('/gallery/test', [GalleryController::class, 'test']);
 Route::get('/gallery/{gallery}', [GalleryController::class, 'show']);
 Route::get('/slide/{slide}', [MediaController::class, 'show']);
 
