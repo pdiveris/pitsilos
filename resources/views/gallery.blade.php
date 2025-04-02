@@ -8,11 +8,11 @@
                 @foreach($media as $tile)
                     <div class="cell">
                         <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
-                            <div class="card">
+                            <div class="cardsaa">
                                 <div class="card-image">
                                     <figure style="text-align: center">
                                         <img
-                                            style="max-width: 259px; max-height: 172px;"
+                                            style="max-height: 172px;"
                                             src="{{url("storage/$tile->image")}}"
                                             data-fancybox="gallery"
                                             data-caption="{{ $tile->title }}"

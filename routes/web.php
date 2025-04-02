@@ -4,6 +4,7 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediaController;
+use App\Http\Controllers\TestController;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
@@ -18,15 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/sadasdas', function () {
-    return view(
-        'home',
-        [
-            'locale' => session()->get('locale') ?? app()->getLocale(),
-            'galleries' => Gallery::where('enabled', '=', true)->get(),
-        ]
-    );
-});
+Route::get('/test', TestController::class);
 
 Route::get('/', HomeController::class);
 Route::get('/gallery/{gallery}', [GalleryController::class, 'show']);
