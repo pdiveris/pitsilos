@@ -40,3 +40,4 @@ window.lightGallery = lightGallery;
 window.lgThumbnail = lgThumbnail;
 window.lgFullScreen = lgFullScreen;
 */
+

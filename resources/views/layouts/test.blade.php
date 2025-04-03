@@ -9,10 +9,11 @@
     @empty($section)
         <title>{{env('APP_NAME')}}</title>
     @endempty
+    <script src="/js/masonry.pkgd.js"></script>
+    @vite(['resources/css/gallery.css', 'resources/js/app.js'])
 </head>
 <body>
 @yield('content')
-@include('partials.footer')
 @include('partials.analytics')
 </body>
 </html>

@@ -20,7 +20,8 @@ class HomeController extends Controller
                 'home',
                 [
                     'locale' => $this->getLocale(),
-                    'galleries' => Gallery::where('enabled', '=', true)->get(),
+                    'galleries' => Gallery::where('enabled', '=', true)
+                        ->get(),
                     'section' => 'Home',
                 ]
             );

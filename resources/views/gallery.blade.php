@@ -3,29 +3,29 @@
 @extends('layouts.pitsilos')
 
 @section('content')
-        <div class="container">
-            <div class="grid" id="slides">
-                @foreach($media as $tile)
-                    <div class="cell">
-                        <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
-                            <div class="cardsaa">
-                                <div class="card-image">
-                                    <figure style="text-align: center">
-                                        <img
-                                            style="max-height: 172px;"
-                                            src="{{url("storage/$tile->image")}}"
-                                            data-fancybox="gallery"
-                                            data-caption="{{ $tile->title }}"
-                                            data-download-src="{{url("storage/$tile->image")}}"
-                                        >
-                                    </figure>
-                                </div>
+    <div class="container">
+        <div class="grid" id="slides">
+            @foreach($media as $tile)
+                <div class="cell">
+                    <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
+                        <div class="cardsaa">
+                            <div class="card-image">
+                                <figure style="text-align: center">
+                                    <img
+                                        style="max-height: 172px;"
+                                        src="{{url("storage/$tile->image")}}"
+                                        data-fancybox="gallery"
+                                        data-caption="{{ $tile->title }}"
+                                        data-download-src="{{url("storage/$tile->image")}}"
+                                    >
+                                </figure>
                             </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
+    </div>
     <script>
         Fancybox.bind("[data-fancybox]", {
             Thumbs : {
