@@ -35,6 +35,7 @@ class GalleryController extends Controller
             [
                 'locale' => $this->getLocale(),
                 'media' => $media,
+                'section' => 'test',
             ]
         );
     }

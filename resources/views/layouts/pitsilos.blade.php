@@ -23,6 +23,8 @@
         href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
     />
     @vite(['resources/css/gallery.css', 'resources/js/app.js'])
+    <script src="/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/masonry.pkgd.js"></script>
 </head>
 <body>
 @include('partials.header')

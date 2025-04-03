@@ -1,27 +1,23 @@
 <!-- resources/views/gallery.blade.php -->
 
 @extends('layouts.pitsilos')
-
 @section('content')
     <div class="container">
-        <div class="grid" id="slides">
+        <div class="bricks" id="grid">
             @foreach($media as $tile)
-                <div class="cell">
-                    <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
-                        <div class="cardsaa">
-                            <div class="card-image">
-                                <figure style="text-align: center">
-                                    <img
-                                        style="max-height: 172px;"
-                                        src="{{url("storage/$tile->image")}}"
-                                        data-fancybox="gallery"
-                                        data-caption="{{ $tile->title }}"
-                                        data-download-src="{{url("storage/$tile->image")}}"
-                                    >
-                                </figure>
-                            </div>
-                        </div>
-                    </a>
+                <div class="grid-item" style="width: 12%">
+                    <figure style="text-align: center">
+                        <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
+                            <img
+                                title="{{$tile->title}}"
+                                alt="{{$tile->description}}"
+                                src="{{url("storage/$tile->image")}}"
+                                data-fancybox="gallery"
+                                data-caption="{{ $tile->title }}"
+                                data-download-src="{{url("storage/$tile->image")}}"
+                            >
+                        </a>
+                    </figure>
                 </div>
             @endforeach
         </div>
@@ -52,6 +48,15 @@
                     right: ["toggleZoom", "slideshow", "fullscreen", "download", "facebook", "close"],
                 },
             },
+        });
+        const msnry = new Masonry( '.bricks', {
+            itemSelector: '.grid-item',
+            columnWidth: 166
+        });
+
+        imagesLoaded( '#grid', function() {
+            console.log("Images loaded");
+            msnry.layout();
         });
     </script>
 @endsection
