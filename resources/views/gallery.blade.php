@@ -4,8 +4,9 @@
 @section('content')
     <div class="container">
         <div class="bricks" id="grid">
+            <div class="grid-sizer"></div>
             @foreach($media as $tile)
-                <div class="grid-item" style="width: 12%">
+                <div class="grid-item" >
                     <figure style="text-align: center">
                         <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
                             <img
@@ -51,7 +52,7 @@
         });
         const msnry = new Masonry( '.bricks', {
             itemSelector: '.grid-item',
-            columnWidth: 166
+            columnWidth: 100
         });
 
         imagesLoaded( '#grid', function() {

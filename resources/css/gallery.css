@@ -31,12 +31,8 @@ a, a:visited, a:hover, a:active {
     color: inherit !important;
 }
 
-.NesobriteExpBook {
-    font-family: NesobriteExpBook;
-}
-
-.neso {
-    font-family: NesobriteExpBook;
+.geist {
+    font-family: GeistMedium;
 }
 
 .logowrapper {
@@ -88,3 +84,17 @@ a, a:visited, a:hover, a:active {
 .container img {
     height: 100%;
 }
+
+.bricks-sizer,
+.grid-item {
+    width: 14%;
+ }
+
+.grid-item {
+    padding: 2px;
+}
+
+.grid-item img {
+    max-width: 100%;
+}
+

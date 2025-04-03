@@ -16,7 +16,7 @@
             <a href=""><i class="fa-brands fa-twitter"></i></a>&nbsp;&nbsp;
             <a href=""><i class="fa-brands fa-instagram"></i></a>&nbsp;
         </p>
-        <p class="neso">
+        <p class="geist">
             © 2024 by Nikos Pitsilos
         </p>
     </div>
