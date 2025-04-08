@@ -6,7 +6,7 @@
     <section class="section">
         <div class="container">
             <div class="grid">
-            @foreach($galleries as $gallery)
+                @foreach($galleries as $gallery)
                 <div class="cell">
                     <a href="{{ url('gallery', [Str::lower($gallery->name)]) }}">
                         <div class="cards">
@@ -23,7 +23,7 @@
                         </div>
                     </a>
                 </div>
-            @endforeach
+              @endforeach
             </div>
         </div>
     </section>
