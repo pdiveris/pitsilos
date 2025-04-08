@@ -1,28 +1,31 @@
 <!-- resources/views/gallery.blade.php -->
 
 @extends('layouts.pitsilos')
+
 @section('content')
-    <div class="container">
-        <div class="bricks" id="grid">
-            <div class="grid-sizer"></div>
-            @foreach($media as $tile)
-                <div class="grid-item" >
-                    <figure style="text-align: center">
-                        <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
-                            <img
-                                title="{{$tile->title}}"
-                                alt="{{$tile->description}}"
-                                src="{{url("storage/$tile->image")}}"
-                                data-fancybox="gallery"
-                                data-caption="{{ $tile->title }}"
-                                data-download-src="{{url("storage/$tile->image")}}"
-                            >
-                        </a>
-                    </figure>
-                </div>
-            @endforeach
-        </div>
+<div class="container" >
+    <div class="grid" id="slides">
+        @foreach($media as $tile)
+            <div class="grid-item is-full-mobile">
+                <a href="{{ url('slide', [Str::lower($tile->slug)]) }}">
+                    <div class="cardsaa">
+                        <div class="card-image">
+                            <figure style="text-align: center">
+                                <img
+                                    style="max-height: 320px;"
+                                    src="{{url("storage/$tile->image")}}"
+                                    data-fancybox="gallery"
+                                    data-caption="{{ $tile->title }}"
+                                    data-download-src="{{url("storage/$tile->image")}}"
+                                >
+                            </figure>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        @endforeach
     </div>
+</div>
     <script>
         Fancybox.bind("[data-fancybox]", {
             Thumbs : {
@@ -50,14 +53,44 @@
                 },
             },
         });
-        const msnry = new Masonry( '.bricks', {
+
+        const msnry = new Masonry( '.grid', {
             itemSelector: '.grid-item',
             columnWidth: 100
+            // percentPosition: true,
+            // columnWidth: '.grid-sizer'
         });
 
-        imagesLoaded( '#grid', function() {
+        imagesLoaded( '#slides', function() {
             console.log("Images loaded");
             msnry.layout();
         });
+
     </script>
+    <style>
+        @media only screen and (min-width: 1201px) {
+            .grid-sizer,
+            .grid-item {
+                width: 20%;
+            }
+        }
+        @media only screen and (max-width: 1200px) {
+            .grid-sizer,
+            .grid-item {
+                width: 100%;
+            }
+        }
+
+        /*
+        .grid-item {
+            float: left;
+        }
+        */
+
+/*        .grid-item img {
+            display: block;
+            max-width: 100%;
+        }*/
+
+    </style>
 @endsection
