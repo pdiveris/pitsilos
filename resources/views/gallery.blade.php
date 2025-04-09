@@ -13,6 +13,8 @@
                             <figure style="text-align: center">
                                 <img
                                     style="max-height: 320px;"
+                                    title="{{$tile->title}}"
+                                    alt="{{$tile->description}} - {!! \App\Models\SettingCached::get('seo_site_title') ?? '' !!}"
                                     src="{{url("storage/$tile->image")}}"
                                     data-fancybox="gallery"
                                     data-caption="{{ $tile->title }}"
@@ -55,10 +57,7 @@
         });
 
         const msnry = new Masonry( '.grid', {
-            itemSelector: '.grid-item',
-            columnWidth: 100
-            // percentPosition: true,
-            // columnWidth: '.grid-sizer'
+            itemSelector: '.grid-item'
         });
 
         imagesLoaded( '#slides', function() {
@@ -80,17 +79,5 @@
                 width: 100%;
             }
         }
-
-        /*
-        .grid-item {
-            float: left;
-        }
-        */
-
-/*        .grid-item img {
-            display: block;
-            max-width: 100%;
-        }*/
-
     </style>
 @endsection
