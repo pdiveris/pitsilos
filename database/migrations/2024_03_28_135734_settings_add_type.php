@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->string('type')
-                ->after('name')
-                ->default('string');
+            if (!Schema::hasColumn('settings', 'type')) {
+                $table->string('type')
+                    ->after('name')
+                    ->default('string');
+            }
         });
     }
 
