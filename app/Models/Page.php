@@ -84,7 +84,7 @@ class Page extends Model
      * @param  string|null  $field
      * @return Model|null
      */
-    public function resolveRouteBinding($value, $field = null)
+    public function resolveRouteBinding($value, $field = null): ?Model
     {
         return $this->where('slug', $value)
             ->where('enabled', '=', true)

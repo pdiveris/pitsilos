@@ -28,10 +28,7 @@ class ExhibitionResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                MarkdownEditor::make('slug')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('content')
+                MarkdownEditor::make('content')
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('meta')
                     ->columnSpanFull(),
@@ -44,13 +41,14 @@ class ExhibitionResource extends Resource
                         '1:1',
                     ])
                     ->preserveFilenames(),
-                Forms\Components\DateTimePicker::make('published_at'),
-                Forms\Components\TextInput::make('enabled')
-                    ->numeric()
-                    ->default(1),
-                Forms\Components\TextInput::make('user_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\DateTimePicker::make('published_at')
+                    ->columnSpanFull(),
+                Forms\Components\Toggle::make('featured')
+                    ->default(0)    // @TODO: validate against existing
+                    ->required(),
+                Forms\Components\Toggle::make('enabled')
+                    ->default(1)
+                    ->required(),
             ]);
     }
 
@@ -65,9 +63,16 @@ class ExhibitionResource extends Resource
                 Tables\Columns\TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('enabled')
+                Tables\Columns\TextColumn::make('user_id')
                     ->numeric()
+                    ->alignCenter()
                     ->sortable(),
+                Tables\Columns\IconColumn::make('featured')
+                    ->alignCenter()
+                    ->boolean(),
+                Tables\Columns\IconColumn::make('enabled')
+                    ->alignCenter()
+                    ->boolean(),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()

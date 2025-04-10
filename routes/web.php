@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\ExhibitionController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediaController;
@@ -26,6 +27,10 @@ Route::get('/gallery/test', [GalleryController::class, 'test']);
 Route::get('/gallery', [GalleryController::class, 'show']);
 Route::get('/gallery/{gallery}', [GalleryController::class, 'show']);
 Route::get('/slide/{slide}', [MediaController::class, 'show']);
+
+
+Route::get('/exhibition', ExhibitionController::class);
+Route::get('/exhibition/{exhibition}', ExhibitionController::class);
 
 Route::middleware([
     'auth:sanctum',
