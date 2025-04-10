@@ -1,7 +1,4 @@
-<!-- resources/views/page.blade.php -->
-
 @extends('layouts.minimal')
-
 @section('content')
     <style>
     </style>

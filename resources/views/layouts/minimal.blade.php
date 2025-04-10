@@ -11,7 +11,7 @@
           rel="stylesheet" />
 
     <link href="/css/fond.css" rel="stylesheet" />
-
+    @include('partials.google_verifier')
 
     @vite(['resources/css/gallery.css', 'resources/js/app.js'])
 </head>

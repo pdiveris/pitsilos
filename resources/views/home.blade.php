@@ -1,5 +1,3 @@
-<!-- resources/views/home.blade.php -->
-
 @extends('layouts.pitsilos')
 @section('content')
 <section class="section">

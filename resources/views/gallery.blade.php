@@ -1,7 +1,4 @@
-<!-- resources/views/gallery.blade.php -->
-
 @extends('layouts.pitsilos')
-
 @section('content')
 <div class="container" >
     <div class="grid" id="slides">

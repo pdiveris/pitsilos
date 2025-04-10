@@ -1,7 +1,4 @@
-<!-- resources/views/page.blade.php -->
-
 @extends('layouts.pitsilos')
-
 @section('content')
     <style>
     </style>
