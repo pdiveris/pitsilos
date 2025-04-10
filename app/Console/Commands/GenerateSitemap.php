@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Exhibition;
 use App\Models\Gallery;
 use App\Models\Page;
 use Illuminate\Console\Command;
@@ -36,6 +37,7 @@ class GenerateSitemap extends Command
         $sitemap->add('/about-nikos');
         $sitemap->add('/contact');
         $sitemap->add('/gallery');
+        $sitemap->add('/exhibition');
 
         // Dynamic pages
         $pages = Page::where("enabled", "=", true)->get();
@@ -51,6 +53,10 @@ class GenerateSitemap extends Command
         }
 
         // Add Exhibitions
+        $exhibitions = Exhibition::where("enabled", "=", true)->get();
+        foreach ($exhibitions as $exhibition) {
+            $sitemap->add("/exhibitions/{$exhibition->slug}");
+        }
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
     }
