@@ -10,9 +10,15 @@ class GalleryController extends Controller
 {
     public function show(Gallery $gallery): View
     {
-        $media = Media::where('gallery_id', '=', $gallery->id)
-            ->where('enabled', '=', 1)
-            ->get();
+        if ($gallery->id === null) {
+            $media = Media::where('enabled', '=', 1)
+                ->inRandomOrder()
+                ->get();
+        } else {
+            $media = Media::where('gallery_id', '=', $gallery->id)
+                ->where('enabled', '=', 1)
+                ->get();
+        }
 
         return view(
             'gallery',
