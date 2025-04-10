@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @include('partials.google_verifier')
+    @include('feed::links')
     @isset($section)
     <title>{{env('APP_NAME')}} :: {{ $section}}</title>
     @endisset

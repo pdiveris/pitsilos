@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Exhibition extends Model
+class Exhibition extends Model implements Feedable
 {
     use HasFactory;
     use SoftDeletes;
@@ -47,5 +49,22 @@ class Exhibition extends Model
     {
         return $this->where('slug', $value)
             ->firstOrFail();
+    }
+
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create([
+            'id' => $this->id,
+            'title' => $this->title,
+            'summary' => $this->content,
+            'updated' => $this->updated_at,
+            'link' => url('/exhibition/'.$this->slug),
+            'authorName' => 'Nikos Pitsilos',
+        ]);
+    }
+
+    public static function getFeedItems()
+    {
+        return Exhibition::orderBy('featured', 'desc')->orderBy('created_at', 'desc')->take(30)->get();
     }
 }

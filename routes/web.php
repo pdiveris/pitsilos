@@ -6,7 +6,6 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\TestController;
-use App\Models\Gallery;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +30,8 @@ Route::get('/slide/{slide}', [MediaController::class, 'show']);
 
 Route::get('/exhibition', ExhibitionController::class);
 Route::get('/exhibition/{exhibition}', ExhibitionController::class);
+
+Route::feeds();
 
 Route::middleware([
     'auth:sanctum',
