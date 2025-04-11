@@ -17,6 +17,7 @@ class GalleryController extends Controller
         } else {
             $media = Media::where('gallery_id', '=', $gallery->id)
                 ->where('enabled', '=', 1)
+                ->inRandomOrder()
                 ->get();
         }
 
