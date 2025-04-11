@@ -15,7 +15,6 @@
             <span aria-hidden="true"></span>
         </a>
     </div>
-
     <div id="navbarBasicExample" class="navbar-menu">
         @include('partials.menu_start')
         <div class="navbar-end">
@@ -47,6 +46,13 @@
                         </div>
                     </button>
                 </div>
+                <div class="is-hidden-fullhd is-hidden-desktop is-hidden-widescreen">
+                @foreach(Site::getBurgerMenuItems() as $menuItem)
+                <a class="navbar-item" href="{{ url($menuItem->slug) }}">
+                    {{ $menuItem->title }}
+                </a>
+                @endforeach
+                </div>
             </div>
         </div>
     </div>
@@ -62,7 +68,6 @@
     </div>
     <div class="column"></div>
 </div>
-
 <script>
     const button = document.querySelector("[data-theme-toggle]");
 

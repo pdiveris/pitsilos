@@ -9,7 +9,6 @@
                 </a> |
                 @endforeach
             @endif
-            &nbsp;
             <a href=""><i class="fa-brands fa-pinterest-p"></i></a>&nbsp;
             <a href="https://www.facebook.com/groups/8160377530655543/">
                 <i class="fa-brands fa-facebook-f"></i>

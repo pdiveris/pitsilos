@@ -54,6 +54,14 @@ class Site
             ->get();
     }
 
+    public static function getBurgerMenuItems(): mixed
+    {
+        return Page::where('enabled', '=', true)
+            ->where('published_at', '<=', now())
+            ->where('options->burger_menu', "true")
+            ->get();
+    }
+
     public static function getEndMenuItems(): mixed
     {
         return Page::where('enabled', '=', true)
