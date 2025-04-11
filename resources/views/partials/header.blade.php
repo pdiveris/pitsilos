@@ -1,3 +1,4 @@
+@php use App\Models\Site; @endphp
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a href="{{ url('/')  }}">
@@ -19,13 +20,6 @@
         @include('partials.menu_start')
         <div class="navbar-end">
             <div class="navbar-item">
-                @if(\App\Models\Site::hasEndMenu())
-                    @foreach(\App\Models\Site::getEndMenuItems() as $menuItem)
-                        <a class="navbar-item" href="{{ url($menuItem->slug) }}">
-                            {{ $menuItem->title }}
-                        </a>
-                    @endforeach
-                @endif
                 <div class="buttons">
                     <a class="button is-small {{ $locale === 'en' ? 'is-active' : '' }}"
                        id="locale_en"
@@ -77,7 +71,7 @@
 
     if (currentThemeSetting === 'dark') {
         document.getElementById('icon_moon').style.display = 'none';
-    } else{
+    } else {
         document.getElementById('icon_sun').style.display = 'none';
     }
 
@@ -102,7 +96,7 @@
         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
         // Add a click event on each of them
-        $navbarBurgers.forEach( el => {
+        $navbarBurgers.forEach(el => {
             el.addEventListener('click', () => {
 
                 // Get the target from the "data-target" attribute

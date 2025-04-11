@@ -14,7 +14,7 @@ class Site
         return env('CMS_HAS_PAGES') &&
             Page::where('enabled', '=', true)
                 ->where('published_at', '<=', now())
-                ->where('options->menu', 'start')
+                ->where('options->start_menu', 'true')
                 ->count() > 0;
     }
 
@@ -28,7 +28,7 @@ class Site
         return env('CMS_HAS_PAGES') &&
             Page::where('enabled', '=', true)
                 ->where('published_at', '<=', now())
-                ->where('options->menu', 'end')
+                ->where('options->end_menu', 'end')
                 ->count() > 0;
     }
 
@@ -42,7 +42,7 @@ class Site
         return env('CMS_HAS_PAGES') &&
             Page::where('enabled', '=', true)
                 ->where('published_at', '<=', now())
-                ->where('options->menu', 'footer')
+                ->where('options->footer_menu', 'true')
                 ->count() > 0;
     }
 
@@ -50,7 +50,7 @@ class Site
     {
         return Page::where('enabled', '=', true)
             ->where('published_at', '<=', now())
-            ->where('options->menu', 'start')
+            ->where('options->start_menu', "true")
             ->get();
     }
 
@@ -58,7 +58,7 @@ class Site
     {
         return Page::where('enabled', '=', true)
             ->where('published_at', '<=', now())
-            ->where('options->menu', 'end')
+            ->where('options->end_menu', 'true')
             ->get();
     }
 
@@ -66,7 +66,7 @@ class Site
     {
         return Page::where('enabled', '=', true)
             ->where('published_at', '<=', now())
-            ->where('options->menu', 'footer')
+            ->where('options->footer_menu', "true")
             ->get();
     }
 }
