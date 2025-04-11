@@ -6,6 +6,6 @@ trait NegotiatesLocale
 {
     public function getLocale(): string
     {
-        return $locale = session()->get('locale') ?? app()->getLocale();
+        return session()->get('locale') ?? app()->getLocale();
     }
 }
