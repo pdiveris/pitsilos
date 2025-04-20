@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @include('partials.google_verifier')
+    @include('partials.search_engines_verifiers')
     @include('feed::links')
     @isset($section)
     <title>{{env('APP_NAME')}} :: {{ $section}}</title>
@@ -31,8 +31,8 @@
 <body>
 @include('partials.header')
 <section class="section hero is-fullheight">
-@yield('content')
-@include('partials.footer')
+    @yield('content')
+    @include('partials.footer')
 </section>
 @include('partials.analytics')
 </body>

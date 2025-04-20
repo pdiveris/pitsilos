@@ -9,7 +9,7 @@
     @empty($section)
         <title>{{env('APP_NAME')}}</title>
     @endempty
-    @include('partials.google_verifier')
+    @include('partials.search_engines_verifiers')
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=advent-pro:500,600|carlito:400,700|sofia-sans-semi-condensed:400,700,800"
