@@ -1,3 +1,4 @@
+@php use App\Models\SettingCached; @endphp
 @extends('layouts.pitsilos')
 @section('content')
 <section class="section">
@@ -8,6 +9,7 @@
                 <div class="card-image">
                     <figure style="text-align: center" >
                         <img src="{{url("storage/$gallery->image") }}"
+                             alt="{{$gallery->name}} - {!! SettingCached::get('seo_site_title') ?? '' !!}"
                              style="max-height: 420px;"
                         >
                         <div class="content sofia_fat has-text-grey is-size-5-mobile">

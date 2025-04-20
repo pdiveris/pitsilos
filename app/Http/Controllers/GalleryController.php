@@ -26,7 +26,7 @@ class GalleryController extends Controller
             [
                 'locale' => $this->getLocale(),
                 'media' => $media,
-                'section' => $gallery->name,
+                'section' => 'Gallery / ' . $gallery->name,
             ]
         );
     }

@@ -7,7 +7,7 @@ return [
 
     /*
      * These options will be passed to GuzzleHttp\Client when it is created.
-     * For in-depth information on all options see the Guzzle docs:
+     * For in-depth information on all options, see the Guzzle docs:
      *
      * http://docs.guzzlephp.org/en/stable/request-options.html
      */

@@ -1,3 +1,4 @@
+@php use App\Models\SettingCached; @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="theme-dark">
 <head>
@@ -8,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=advent-pro:500,600|carlito:400,700|sofia-sans-semi-condensed:400,700,800"
           rel="stylesheet" />
+
+    <meta name='description' content='{!! SettingCached::get('seo_meta_description') ?? '' !!}'>
+    <meta name='keywords' content='{!! SettingCached::get('seo_meta_keywords') ?? '' !!}'>
 
     <link href="/css/fond.css" rel="stylesheet" />
     @include('partials.search_engines_verifiers')

@@ -6,6 +6,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <meta name='description' content='{!! SettingCached::get('seo_meta_description') ?? '' !!}'>
+        <meta name='keywords' content='{!! SettingCached::get('seo_meta_keywords') ?? '' !!}'>
+
         @include('partials.search_engines_verifiers')
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
