@@ -31,18 +31,18 @@ class GalleryController extends Controller
         );
     }
 
-    public function test(Gallery $gallery): View
+    public function uhu(): View
     {
-        $media = Media::where('gallery_id', '=', 5)
-            ->where('enabled', '=', 1)
+        $media = Media::where('enabled', '=', 1)
+            ->inRandomOrder()
             ->get();
 
         return view(
-            'test',
+            'uhu',
             [
                 'locale' => $this->getLocale(),
                 'media' => $media,
-                'section' => 'test',
+                'section' => 'UHU',
             ]
         );
     }
