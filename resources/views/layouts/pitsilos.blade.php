@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @include('partials.search_engines_verifiers')
+    @include('partials.schema_dot_org')
     @include('feed::links')
     @isset($section)
     <title>{{env('APP_NAME')}} Photography :: {{ $section}}</title>

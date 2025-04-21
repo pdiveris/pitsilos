@@ -1,13 +1,15 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Media;
 use Illuminate\View\View;
+use App\Contracts\HasSchema;
 
 class GalleryController extends Controller
 {
+    use HasSchema;
+
     public function show(Gallery $gallery): View
     {
         if ($gallery->id === null) {
@@ -26,6 +28,7 @@ class GalleryController extends Controller
             [
                 'locale' => $this->getLocale(),
                 'media' => $media,
+                'schema' => $this->getSchema(),
                 'section' => 'Gallery / ' . $gallery->name,
             ]
         );

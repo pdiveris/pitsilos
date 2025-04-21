@@ -1,1 +1,2 @@
-{!! \App\Models\SettingCached::get('matomo_analytics') ?? '' !!}
+@php use App\Models\SettingCached; @endphp
+{!! SettingCached::get('matomo_analytics') ?? '' !!}
