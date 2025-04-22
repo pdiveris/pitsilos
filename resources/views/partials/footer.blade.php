@@ -9,12 +9,12 @@
                 </a> |
                 @endforeach
             @endif
-            <a href=""><i class="fa-brands fa-pinterest-p"></i></a>&nbsp;
+            <a href="https://uk.pinterest.com/pin/19632948349363998/"><i class="fa-brands fa-pinterest-p"></i></a>&nbsp;
             <a href="https://www.facebook.com/groups/8160377530655543/">
                 <i class="fa-brands fa-facebook-f"></i>
             </a>&nbsp;
             <a href=""><i class="fa-brands fa-twitter"></i></a>&nbsp;&nbsp;
-            <a href=""><i class="fa-brands fa-instagram"></i></a>&nbsp;
+            <a href="https://www.instagram.com/nikospitsilos"><i class="fa-brands fa-instagram"></i></a>&nbsp;
         </p>
         <p class="geist">
             © 2024 by Nikos Pitsilos

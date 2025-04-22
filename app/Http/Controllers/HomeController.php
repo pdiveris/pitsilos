@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Contracts\HasSchema;
 use App\Contracts\NegotiatesLocale;
 use App\Models\Gallery;
+use Carbon\Carbon;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
@@ -29,6 +31,7 @@ class HomeController extends Controller
                         ->inRandomOrder()
                         ->get(),
                     'schema' => $this->getSchema(),
+                    'date_updated' => Carbon::parse("2025-04-20")->toIso8601String(),
                     'section' => 'Home',
                 ]
             );

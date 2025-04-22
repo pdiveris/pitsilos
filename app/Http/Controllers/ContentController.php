@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
+use App\Contracts\HasSchema;
 
 /**
  * Try to find a page from slug as a response to fallback route
@@ -10,7 +14,9 @@ use App\Models\Page;
  */
 class ContentController extends Controller
 {
-    public function __invoke(Page $page)
+    use HasSchema;
+
+    public function __invoke(Page $page): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
         return view(
             'content',
@@ -18,6 +24,8 @@ class ContentController extends Controller
                 'locale' => $this->getLocale(),
                 'page' => $page,
                 'section' => $page->title,
+                'date_updated' => $page->updated_at->toISOString(),
+                'schema' => $this->getSchema(),
             ]
         );
     }

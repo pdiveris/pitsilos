@@ -23,6 +23,8 @@
     <meta property="og:url" content="{{ Request::url() }}" />
     <meta property="og:site_name" content="{{env('APP_NAME')}}" />
     <meta property="og:type" content="website" />
+    <meta property="og:updated_time" content="{{$date_updated}}" />
+
     <meta name="twitter:card" content="summary_large_image" />
 
     @isset($section)

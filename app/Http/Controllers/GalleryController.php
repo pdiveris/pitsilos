@@ -29,6 +29,10 @@ class GalleryController extends Controller
                 'locale' => $this->getLocale(),
                 'media' => $media,
                 'schema' => $this->getSchema(),
+                'date_updated' => Media::where("enabled", "=", 1)
+                    ->orderBy("updated_at", "desc")
+                    ->first()
+                    ->updated_at->toIso8601String(),
                 'section' => 'Gallery / ' . $gallery->name,
             ]
         );

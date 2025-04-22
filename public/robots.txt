@@ -1,2 +1,3 @@
+Sitemap: https://nikospitsilos.com/sitemap.xml
 User-agent: *
 Disallow:
